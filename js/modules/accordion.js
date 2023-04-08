@@ -21,5 +21,8 @@ export default class Accordion {
       this.toggleAccordion(this.accordionList[0]);
       this.addAccordionEvent();
     }
+    //tem que colocar para retornar o próprio objeto para poder acessar o métodos possívei
+    //caso não tenha retorno, a função vai retornar undefined
+    return this;
   }
 }
