@@ -22,13 +22,13 @@ const tabNav = new TabNav(
 );
 tabNav.init();
 
-const modal = new Modal(
+const modalMenu = new Modal(
   '[data-modal="abrir"]',
   '[data-modal="fechar"]',
   '[data-modal="container"]'
 );
 
-modal.init();
+modalMenu.init();
 
 initTooltip();
 initDropdownMenu();
