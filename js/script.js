@@ -5,7 +5,7 @@ import Modal from "./modules/modal.js";
 import Tooltip from "./modules/tooltip.js";
 import DropdownMenu from "./modules/dropdown-menu.js";
 import MenuMobile from "./modules/menu-mobile.js";
-import initFuncionamento from "./modules/funcionamento.js";
+import Functionamento from "./modules/funcionamento.js";
 import fetchAnimais from "./modules/fetch-animais.js";
 import fetchBitcoin from "./modules/fetch-bitcoin.js";
 import ScrollAnima from "./modules/scroll-anima.js";
@@ -22,17 +22,18 @@ const tabNav = new TabNav(
 );
 tabNav.init();
 
-const modalMenu = new Modal(
+const modal = new Modal(
   '[data-modal="abrir"]',
   '[data-modal="fechar"]',
   '[data-modal="container"]'
 );
-
-modalMenu.init();
+modal.init();
 
 const tooltip = new Tooltip("[data-tooltip]");
-
 tooltip.init();
+
+const scrollAnima = new ScrollAnima('[data-anime="scroll"]');
+scrollAnima.init();
 
 const dropdownMenu = new DropdownMenu("[data-dropdown]");
 dropdownMenu.init();
@@ -40,10 +41,10 @@ dropdownMenu.init();
 const menuMobile = new MenuMobile('[data-menu="button"]', '[data-menu="list"]');
 menuMobile.init();
 
-initFuncionamento();
+const funcionamento = new Functionamento("[data-semana]", "aberto");
+console.log(funcionamento);
 
-const scrollAnima = new ScrollAnima('[data-anime="scroll"]');
-scrollAnima.init();
+funcionamento.init();
 
 fetchAnimais("../../animaisapi.json", ".numeros-grid");
 
